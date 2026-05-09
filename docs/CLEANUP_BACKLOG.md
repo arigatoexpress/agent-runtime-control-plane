@@ -6,6 +6,7 @@
 - Run `npm run repo-map:write` before repo cleanup decisions.
 - Run `npm run surfaces:write` before runtime-control migration decisions.
 - Run `npm run launchagents:summary` before any LaunchAgent consolidation plan.
+- Run `npm run telegram:summary` before any Telegram command-path migration.
 - Run `npm run quarantine-plan` before archiving stale clone repos.
 - Use `data/latest-inventory.json` to choose one runtime category at a time.
 - Use `data/repo-map.json` to separate canonical repos from stale clones.
@@ -14,13 +15,15 @@
 - Use `data/launchagents-summary.json` for canonical plist labels, command path
   shape, schedule posture, categories, and env-var key names with values
   redacted.
+- Use `data/telegram-surfaces-summary.json` for Telegram command/send posture,
+  recipient-key presence, token-key presence, and dry-run guard presence.
 - Use `data/quarantine-plan.md` to preserve dirty clone state before any archive
   move.
 
 ## Next Safe PRs
 
-1. Add command-level dry-run Telegram metadata: commands, recipients as redacted
-   presence flags, send/read-only posture, and owning repo.
+1. Convert the Telegram surface catalog into one dry-run adapter for a single
+   command family.
 2. Add LaunchAgent command-path existence/readiness checks without loading or
    unloading any services.
 3. Add an x402 salvage map from Sapphire into AOE: products, routes, source

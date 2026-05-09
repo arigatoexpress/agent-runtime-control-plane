@@ -1,0 +1,2272 @@
+{
+  "schema": "aribs.telegram_surface_catalog_summary.v1",
+  "generatedAt": "2026-05-09T23:22:49.939Z",
+  "safety": {
+    "mode": "read-only",
+    "storesSourceLines": false,
+    "storesSecretValues": false,
+    "sendsTelegram": false,
+    "mutatesRuntime": false,
+    "recipientValuesRedacted": true,
+    "tokenValuesRedacted": true
+  },
+  "summary": {
+    "total": 723,
+    "byRepo": {
+      "Sapphire": 674,
+      "agent-opportunity-exchange": 7,
+      "wildfire-watch": 20,
+      "org-platform": 5,
+      "regional-intel-workbench": 6,
+      "cyber-threat-bot": 3,
+      "sapphire-sentinel": 8
+    },
+    "byKind": {
+      "telegram-code": 27,
+      "config-or-runbook": 437,
+      "operator-bot": 380,
+      "notifier": 238,
+      "intel-ingestion": 160,
+      "test-fixture": 106
+    },
+    "bySendPosture": {
+      "unknown": 142,
+      "dry-run-or-disabled": 260,
+      "documented-or-configured": 282,
+      "explicit-send-call": 25,
+      "send-call-with-dry-run-guard": 14
+    },
+    "withRecipientConfigKeys": 46,
+    "withTokenConfigKeys": 57,
+    "withCommandTokens": 379,
+    "withExplicitDryRunGuard": 227
+  },
+  "nextSteps": [
+    "Promote one command family into a dry-run adapter first.",
+    "Keep recipient ids and token values in their original secret stores.",
+    "Do not send Telegram messages for verification."
+  ],
+  "topSurfaces": [
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/ops/production_readiness_sweep.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/getactivescheme",
+        "/ops",
+        "/query",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/pm_bot/README.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS_FILE",
+        "SAPPHIRE_PM_BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_WEBHOOK_SECRET"
+      ],
+      "recipientConfigKeysPresent": [
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS_FILE"
+      ],
+      "tokenConfigKeysPresent": [
+        "SAPPHIRE_PM_BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/plugins",
+        "/pm",
+        "/rag",
+        "/status"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/pm_bot/server.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "REDACTED_TELEGRAM_TOKEN",
+        "SAPPHIRE_PM_BOT_TOKEN",
+        "TELEGRAM_API",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_WEBHOOK_SECRET"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "REDACTED_TELEGRAM_TOKEN",
+        "SAPPHIRE_PM_BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/telegram",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "wildfire-watch",
+      "repoPath": "/Users/aribs/Code/wildfire-watch",
+      "path": "ml/fire_detection/alerts.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_CHAT_ID",
+        "TELEGRAM_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_TOKEN"
+      ],
+      "commandTokens": [],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/alpha/src/main.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "SAPPHIRE_TELEGRAM_WEBHOOK_SECRET",
+        "TELEGRAM",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID",
+        "TELEGRAM_HEARTBEAT_INTERVAL_SECONDS",
+        "TELEGRAM_WEBHOOK_SECRET",
+        "TELEGRAM_WEBHOOK_URL"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/allocation",
+        "/answer",
+        "/approve",
+        "/approve_all",
+        "/approve_proposal",
+        "/min",
+        "/reject",
+        "/reject_proposal",
+        "/resume",
+        "/status",
+        "/steer"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/agents/src/sapphire_agents/orchestrator.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/agents",
+        "/alphastream",
+        "/architecture",
+        "/article",
+        "/autonomy",
+        "/brief",
+        "/checkin",
+        "/cleanup_agents",
+        "/cleanupagents",
+        "/command",
+        "/decide",
+        "/decision",
+        "/deepresearch",
+        "/digest",
+        "/directive",
+        "/fleet",
+        "/focus",
+        "/heartbeat",
+        "/inbox",
+        "/mode",
+        "/next",
+        "/overview",
+        "/pauseheartbeat",
+        "/prefs",
+        "/questions",
+        "/rari",
+        "/reset",
+        "/resumeheartbeat",
+        "/scripts",
+        "/setaster",
+        "/setcheckin",
+        "/setdirective",
+        "/setheartbeat",
+        "/setkeywords",
+        "/setlighter",
+        "/setsla",
+        "/skills",
+        "/state",
+        "/status",
+        "/subscribe"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/core/src/sapphire_core/telegram_bot.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_WEBHOOK_URL"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/command",
+        "/heartbeat",
+        "/kill",
+        "/resume",
+        "/status"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/telegram/src/sapphire_telegram/bot.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_WEBHOOK_URL"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/heartbeat",
+        "/kill",
+        "/resume",
+        "/status"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/archived/telegram_bot_controller.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/code",
+        "/home",
+        "/mode",
+        "/pause",
+        "/resume",
+        "/stats",
+        "/status",
+        "/trade",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/archived/unified_health_monitor.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/output",
+        "/status",
+        "/unified_health_monitor",
+        "/usr",
+        "/webhook"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/content/auto_publish.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "SAPPHIRE_CONTENT_TELEGRAM_SUMMARY"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/core/confirmation_firewall.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "ALLOWED_TELEGRAM_CHAT_IDS",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "ALLOWED_TELEGRAM_CHAT_IDS",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/analytics_dashboard/asfao.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_ASFAO_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_ASFAO_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/issues",
+        "/secrets",
+        "/versions"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/telegram-bot/app.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "ALLOWED_TELEGRAM_USER_IDS",
+        "BOT_TOKEN",
+        "CHAT_ID",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS",
+        "TELEGRAM_ALLOWED_USER_IDS",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID",
+        "TELEGRAM_DRY_RUN"
+      ],
+      "recipientConfigKeysPresent": [
+        "ALLOWED_TELEGRAM_USER_IDS",
+        "CHAT_ID",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS",
+        "TELEGRAM_ALLOWED_USER_IDS",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/ask",
+        "/bin",
+        "/btc",
+        "/budget",
+        "/chart",
+        "/dispatch",
+        "/escalate",
+        "/events",
+        "/fix",
+        "/kimi",
+        "/levels",
+        "/models",
+        "/news",
+        "/offers",
+        "/opt",
+        "/price",
+        "/repos",
+        "/scan",
+        "/snapshot",
+        "/state",
+        "/status",
+        "/strategy",
+        "/think",
+        "/threat",
+        "/threats",
+        "/usr",
+        "/verify"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/ops/hermes_runtime_readiness.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/etc",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/alpha/src/ai/gemini_guard.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/telegram/kimi_relay.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "KIMI_RELAY_CHAT_ID",
+        "RELAY_CHAT_ID",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [
+        "KIMI_RELAY_CHAT_ID",
+        "RELAY_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/archived/health_monitor.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/alpha/src/media/manager.py",
+      "kinds": [
+        "intel-ingestion",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/media"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/control-plane/app/telegram_api.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/foundry/sync.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-read-only-ingestion-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/daily_brief",
+        "/messages",
+        "/threats"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/telegram/src/sapphire_telegram/handlers.py",
+      "kinds": [
+        "intel-ingestion",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/agent_status",
+        "/answer",
+        "/approve_all",
+        "/approve_proposal",
+        "/audit",
+        "/autonomy",
+        "/ci_status",
+        "/command",
+        "/diff",
+        "/media",
+        "/openclaw_smoke",
+        "/openclaw_status",
+        "/prediction",
+        "/predictions",
+        "/proposals",
+        "/reject_proposal",
+        "/roadmap_sync",
+        "/scout",
+        "/steer",
+        "/trade"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/alpha/src/telegram_handlers.py",
+      "kinds": [
+        "intel-ingestion",
+        "operator-bot"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/agent_status",
+        "/answer",
+        "/approve_all",
+        "/approve_proposal",
+        "/audit",
+        "/autonomy",
+        "/ci_status",
+        "/command",
+        "/diff",
+        "/media",
+        "/openclaw_smoke",
+        "/openclaw_status",
+        "/prediction",
+        "/predictions",
+        "/proposals",
+        "/reject_proposal",
+        "/roadmap_sync",
+        "/scout",
+        "/steer",
+        "/trade"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/deploy/deploy_rari2_telegram_controller.sh",
+      "kinds": [
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/home",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "agents/health_monitor.py",
+      "kinds": [
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/home",
+        "/proc",
+        "/sys",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "agents/market_watchdog.py",
+      "kinds": [
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/home",
+        "/path",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "benchmarks/results/gemini_security_investigation_2026-04-18.md",
+      "kinds": [
+        "config-or-runbook",
+        "operator-bot"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/dev"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/telegram/src/sapphire_telegram/safe_send.py",
+      "kinds": [
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "ALLOWED_TELEGRAM_CHAT_IDS",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "ALLOWED_TELEGRAM_CHAT_IDS",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/path"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "plugins/claw-sapphire/tools/notify.py",
+      "kinds": [
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "ALLOWED_TELEGRAM_CHAT_IDS",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "ALLOWED_TELEGRAM_CHAT_IDS",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/archived/send_architecture_bottleneck_digest.py",
+      "kinds": [
+        "notifier"
+      ],
+      "sendPosture": "send-call-with-dry-run-guard",
+      "migrationPosture": "extract-notification-template-and-dry-run-renderer-first",
+      "envVariableKeys": [
+        "SAPPHIRE_TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_BOT_CHAT_ID",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID",
+        "TELEGRAM_OWNER_USER_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_BOT_CHAT_ID",
+        "TELEGRAM_CHAT_ID",
+        "TELEGRAM_OWNER_USER_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "SAPPHIRE_TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/usr"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/content/telegram_approval.py",
+      "kinds": [
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/core/src/sapphire_core/smart_notifications.py",
+      "kinds": [
+        "notifier"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/core/src/sapphire_core/health_checker.py",
+      "kinds": [
+        "telegram-code"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [
+        "CHAT_ID",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID",
+        "TELEGRAM_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [
+        "CHAT_ID",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_TOKEN"
+      ],
+      "commandTokens": [
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "CLAUDE.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/metrics",
+        "/performance",
+        "/predictions",
+        "/showcase",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/handoffs/codex-overnight-megaprompt-2026-04-28.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "SAPPHIRE_TELEGRAM_INTEL_LIVE"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/diligence",
+        "/messages",
+        "/routines",
+        "/run",
+        "/sovereign",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/process/claude-force-multiplier-playbook-2026-04-29.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "KIMI_CLAW_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "KIMI_CLAW_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/explain",
+        "/handoffs",
+        "/keys",
+        "/observability",
+        "/simplify"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/routines-manifest.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "SAPPHIRE_CONTENT_TELEGRAM_SUMMARY"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/autonomy",
+        "/infra",
+        "/path",
+        "/threats"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/dashboard/app.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_TOKEN"
+      ],
+      "commandTokens": [
+        "/activity",
+        "/agents",
+        "/analytics",
+        "/app",
+        "/architecture",
+        "/benchmarks",
+        "/cascade",
+        "/chain",
+        "/command",
+        "/content",
+        "/control",
+        "/cross",
+        "/customer",
+        "/diligence",
+        "/factors",
+        "/h1",
+        "/home",
+        "/inference",
+        "/infrastructure",
+        "/intel",
+        "/intelligence",
+        "/investment",
+        "/launchagent",
+        "/logs",
+        "/metrics",
+        "/narrative",
+        "/observability",
+        "/organization",
+        "/performance",
+        "/portfolio",
+        "/predictions",
+        "/production",
+        "/quote",
+        "/regimes",
+        "/risk",
+        "/sapphire",
+        "/security",
+        "/settings",
+        "/showcase",
+        "/signals"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/archive/2026/audits/launchagents-audit-2026-04-21.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "documented-or-configured",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "KIMI_RELAY_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "KIMI_RELAY_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/com",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/security/telegram-operator-threat-model.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "documented-or-configured",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "LIVE_TRADING_DISABLED_FROM_TELEGRAM",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS"
+      ],
+      "recipientConfigKeysPresent": [
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS"
+      ],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/buy",
+        "/digest",
+        "/eval",
+        "/exec",
+        "/launch",
+        "/rotate",
+        "/sell",
+        "/shell",
+        "/sudo",
+        "/trade",
+        "/transfer",
+        "/withdraw"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/core/src/sapphire_core/position_reconciler.py",
+      "kinds": [
+        "telegram-code"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/foundry/ingestion.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "SAPPHIRE_TELEGRAM_INTEL_DATA_DIR"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/daily_brief",
+        "/messages",
+        "/threats"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/alpha/src/api_handlers.py",
+      "kinds": [
+        "telegram-code"
+      ],
+      "sendPosture": "explicit-send-call",
+      "migrationPosture": "must-wrap-in-dry-run-adapter-before-migration",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/control-plane/app/main.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "unknown",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/architecture",
+        "/assets",
+        "/complete",
+        "/fail",
+        "/favicon",
+        "/logbook",
+        "/organization",
+        "/projects",
+        "/secops",
+        "/status",
+        "/telegram"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/inference-proxy/app.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "unknown",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "KIMI_CLAW_BOT_TOKEN",
+        "KIMI_RELAY_CHAT_ID",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [
+        "KIMI_RELAY_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [
+        "KIMI_CLAW_BOT_TOKEN",
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/chat",
+        "/failover",
+        "/metrics"
+      ],
+      "hasTelegramApiUrl": true,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "wildfire-watch",
+      "repoPath": "/Users/aribs/Code/wildfire-watch",
+      "path": "docs/security/incident_response.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "documented-or-configured",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_TOKEN"
+      ],
+      "commandTokens": [
+        "/data_classification",
+        "/secrets_inventory",
+        "/security",
+        "/threat_model_2026"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ari-handoff-checklist.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/com",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/competitive/landscape-2026-04-28.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/foundry-ontology-schema.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/daily_brief",
+        "/messages",
+        "/threats"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/handoffs/codex-megaprompt-tranche-3-2026-04-28.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/cancel",
+        "/customer",
+        "/diligence",
+        "/observability",
+        "/routines",
+        "/signals",
+        "/sovereign",
+        "/threat",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ops/foundry-sync-runbook.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ops/gcp-vertex-ai-complement-plan.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ops/runbook-coverage-audit-2026-04-29.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/digest",
+        "/launchagent"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ops/source-quality-runbook.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/report",
+        "/source",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/products/chaos-engineering-0.1.0.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/tmp",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/products/foundry-ontology-0.2.0.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/threats"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/products/narrative-synthesis-0.1.0.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/theses"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/web-integrations.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/com",
+        "/opt",
+        "/tweets"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "infra/tool-registry.yaml",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/diligence/build_pitch_deck.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/cancel",
+        "/routines",
+        "/threat",
+        "/tmp"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/ops/telegram_channel_curation.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/webhook/src/receiver.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/alerts",
+        "/body",
+        "/h1",
+        "/head",
+        "/html",
+        "/sapphire",
+        "/span",
+        "/status",
+        "/style",
+        "/table",
+        "/td",
+        "/th",
+        "/title",
+        "/tr",
+        "/usr",
+        "/webhook",
+        "/windows"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "wildfire-watch",
+      "repoPath": "/Users/aribs/Code/wildfire-watch",
+      "path": "docs/PHASE_0_QUICKSTART.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/var",
+        "/wildfire"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/architecture-overview.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/architecture",
+        "/autonomy",
+        "/budget",
+        "/chain",
+        "/customer",
+        "/digest",
+        "/fix",
+        "/focus",
+        "/inference",
+        "/intelligence",
+        "/risk",
+        "/routines",
+        "/scan",
+        "/services",
+        "/showcase",
+        "/signals",
+        "/soc",
+        "/sovereign",
+        "/status",
+        "/steer",
+        "/threat"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/diligence/02-product-surfaces.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/activity",
+        "/agents",
+        "/analytics",
+        "/architecture",
+        "/cascade",
+        "/chain",
+        "/command",
+        "/content",
+        "/control",
+        "/customer",
+        "/diligence",
+        "/factors",
+        "/inference",
+        "/infrastructure",
+        "/intel",
+        "/intelligence",
+        "/investment",
+        "/logs",
+        "/metrics",
+        "/organization",
+        "/performance",
+        "/portfolio",
+        "/predictions",
+        "/production",
+        "/risk",
+        "/sapphire",
+        "/security",
+        "/settings",
+        "/showcase",
+        "/signals",
+        "/source",
+        "/sovereign",
+        "/system",
+        "/threat"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ops/slos.md",
+      "kinds": [
+        "config-or-runbook",
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "lib/correlator/sources.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "unknown",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/convergence_watchlist",
+        "/predictions",
+        "/regimes"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/diligence/build_pitch_deck_diagram.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "unknown",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/tmp"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "scripts/ops/safety_status_report.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "unknown",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/telegram_intel/history_export.py",
+      "kinds": [
+        "intel-ingestion",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "unknown",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/handoffs/codex-handoff-2026-04-28-evening.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "HYPERLIQUID_TELEGRAM_NOTIFY"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/info",
+        "/memory"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ops/content-publisher-runbook.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "SAPPHIRE_CONTENT_TELEGRAM_SUMMARY"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/com",
+        "/observability",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/ops/telegram-operator-console-runbook.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "LIVE_TRADING_DISABLED_FROM_TELEGRAM",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS_FILE"
+      ],
+      "recipientConfigKeysPresent": [
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS_FILE"
+      ],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/bash",
+        "/buy",
+        "/cancel",
+        "/claw",
+        "/cmd",
+        "/com",
+        "/deploy",
+        "/deposit",
+        "/dev",
+        "/digest",
+        "/eval",
+        "/exec",
+        "/kill",
+        "/launch",
+        "/log",
+        "/merge",
+        "/pm",
+        "/promote",
+        "/pulse",
+        "/rag",
+        "/restart",
+        "/rotate",
+        "/routines",
+        "/secret",
+        "/sell",
+        "/send",
+        "/services",
+        "/shell",
+        "/ssh",
+        "/status",
+        "/sudo",
+        "/svc",
+        "/tail",
+        "/trade",
+        "/transfer",
+        "/whoami",
+        "/wire",
+        "/withdraw"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "plugins/claw-sapphire/tools/sapphire_pm_bot.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "LIVE_TRADING_DISABLED_FROM_TELEGRAM",
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS"
+      ],
+      "recipientConfigKeysPresent": [
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS"
+      ],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/buy",
+        "/cancel",
+        "/claw",
+        "/cmd",
+        "/crm",
+        "/dev",
+        "/digest",
+        "/eval",
+        "/exec",
+        "/launch",
+        "/pm",
+        "/pulse",
+        "/rag",
+        "/rotate",
+        "/routines",
+        "/sell",
+        "/services",
+        "/shell",
+        "/status",
+        "/sudo",
+        "/svc",
+        "/trade",
+        "/transfer",
+        "/usr",
+        "/whoami",
+        "/withdraw"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "wildfire-watch",
+      "repoPath": "/Users/aribs/Code/wildfire-watch",
+      "path": "docs/security/data_classification.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "dry-run-or-disabled",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_TOKEN"
+      ],
+      "commandTokens": [
+        "/incident_response",
+        "/secrets_inventory",
+        "/threat_model_2026"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": true
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "AGENTS.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "documented-or-configured",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS"
+      ],
+      "recipientConfigKeysPresent": [
+        "SAPPHIRE_PM_BOT_ALLOWED_USER_IDS"
+      ],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/launchagent"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "README.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "documented-or-configured",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "TELEGRAM_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/diligence",
+        "/div",
+        "/production",
+        "/showcase",
+        "/sub",
+        "/usr"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "docs/handoffs/cowork-morning-briefing-2026-04-28.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "documented-or-configured",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "KIMI_CLAW_BOT_TOKEN"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [
+        "KIMI_CLAW_BOT_TOKEN"
+      ],
+      "commandTokens": [
+        "/dev",
+        "/live",
+        "/revoke",
+        "/whoami"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "results/session_handoff_2026-04-19.md",
+      "kinds": [
+        "config-or-runbook",
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "documented-or-configured",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_APPROVAL_CHAT_ID",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "recipientConfigKeysPresent": [
+        "TELEGRAM_APPROVAL_CHAT_ID",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [
+        "/tmp"
+      ],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    },
+    {
+      "repo": "Sapphire",
+      "repoPath": "/Users/aribs/Code/Sapphire",
+      "path": "services/alpha/src/security/agent_permissions.py",
+      "kinds": [
+        "notifier",
+        "operator-bot"
+      ],
+      "sendPosture": "unknown",
+      "migrationPosture": "extract-command-contract-first",
+      "envVariableKeys": [
+        "TELEGRAM_SEND"
+      ],
+      "recipientConfigKeysPresent": [],
+      "tokenConfigKeysPresent": [],
+      "commandTokens": [],
+      "hasTelegramApiUrl": false,
+      "hasExplicitDryRunGuard": false
+    }
+  ]
+}
