@@ -1,0 +1,12 @@
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import test from "node:test";
+
+test("launchagent catalog script parses", () => {
+  execFileSync("node", ["--check", "scripts/launchagents.mjs"], {
+    cwd: "/Users/aribs/Code/agent-runtime-control-plane",
+    stdio: "pipe"
+  });
+  assert.ok(true);
+});
+
