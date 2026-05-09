@@ -1,0 +1,59 @@
+{
+  "repos": [
+    {
+      "name": "Sapphire",
+      "path": "/Users/aribs/Code/Sapphire",
+      "role": "current command repo and legacy runtime source",
+      "posture": "read-only reference until focused migration PRs"
+    },
+    {
+      "name": "agent-opportunity-exchange",
+      "path": "/Users/aribs/Code/agent-opportunity-exchange",
+      "role": "canonical x402 paid intelligence product kernel",
+      "posture": "keep product-focused; do not absorb runtime control"
+    },
+    {
+      "name": "wildfire-watch",
+      "path": "/Users/aribs/Code/wildfire-watch",
+      "role": "standalone wildfire situational-awareness lane",
+      "posture": "preserve hardware truth; keep operational outputs read-only"
+    },
+    {
+      "name": "Project-Go-Forward",
+      "path": "/Users/aribs/Code/Project-Go-Forward",
+      "role": "THO production-adjacent retail app",
+      "posture": "protected read-only unless explicitly opened"
+    },
+    {
+      "name": "org-platform",
+      "path": "/Users/aribs/Code/org-platform",
+      "role": "workspace/dashboard scaffold reference",
+      "posture": "reference for operator surfaces"
+    },
+    {
+      "name": "regional-intel-workbench",
+      "path": "/Users/aribs/Code/regional-intel-workbench",
+      "role": "regional intelligence patterns and Pi deployment history",
+      "posture": "extract reusable data contracts only"
+    },
+    {
+      "name": "cyber-threat-bot",
+      "path": "/Users/aribs/Code/cyber-threat-bot",
+      "role": "defensive cyber source and LaunchAgent pattern",
+      "posture": "extract defensive adapters and retire local scheduling later"
+    },
+    {
+      "name": "megaeth-agent-guard",
+      "path": "/Users/aribs/Code/megaeth-agent-guard",
+      "role": "MegaETH hackathon safety guard",
+      "posture": "standalone hackathon repo candidate"
+    },
+    {
+      "name": "sapphire-sentinel",
+      "path": "/Users/aribs/Code/sapphire-sentinel",
+      "role": "x402/MegaETH hackathon demo",
+      "posture": "standalone x402 consumer and demo lane"
+    }
+  ]
+}
+

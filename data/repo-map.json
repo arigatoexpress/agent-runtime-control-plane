@@ -1,0 +1,1197 @@
+{
+  "schema": "aribs.git_repo_map.v1",
+  "generatedAt": "2026-05-09T22:21:07.173Z",
+  "root": "/Users/aribs/Code",
+  "safety": {
+    "mode": "read-only",
+    "ignoresBackupRoots": true,
+    "mutatesRepos": false
+  },
+  "repos": [
+    {
+      "name": "0guard",
+      "path": "/Users/aribs/Code/0guard",
+      "family": "hackathon",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "AgenticArigato",
+      "path": "/Users/aribs/Code/AgenticArigato",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "Cointracker",
+      "path": "/Users/aribs/Code/Cointracker",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "Kronos",
+      "path": "/Users/aribs/Code/Kronos",
+      "family": "other",
+      "branch": "master...origin/master",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "NemoClaw",
+      "path": "/Users/aribs/Code/NemoClaw",
+      "family": "agent-runtime",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "OpenBB",
+      "path": "/Users/aribs/Code/OpenBB",
+      "family": "other",
+      "branch": "develop...origin/develop",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "Project-Go-Forward",
+      "path": "/Users/aribs/Code/Project-Go-Forward",
+      "family": "project-go-forward",
+      "branch": "main...origin/main [behind 1]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "protected THO repo; no edits unless explicitly opened"
+    },
+    {
+      "name": "Project-Go-Forward-a11y",
+      "path": "/Users/aribs/Code/Project-Go-Forward-a11y",
+      "family": "project-go-forward",
+      "branch": "feat/a11y-customer-pages...origin/chore/frontend-vitest-harness [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "Project-Go-Forward-adstudio-css",
+      "path": "/Users/aribs/Code/Project-Go-Forward-adstudio-css",
+      "family": "project-go-forward",
+      "branch": "refactor/adstudio-css-tailwind...origin/main [ahead 2, behind 73]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "Project-Go-Forward-gmail-inbound",
+      "path": "/Users/aribs/Code/Project-Go-Forward-gmail-inbound",
+      "family": "project-go-forward",
+      "branch": "feat/gmail-inbound-scaffold...origin/main [ahead 2, behind 73]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "Project-Go-Forward-photo-classify",
+      "path": "/Users/aribs/Code/Project-Go-Forward-photo-classify",
+      "family": "project-go-forward",
+      "branch": "feat/inventory-photo-classification...origin/main [ahead 2, behind 73]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "Project-Go-Forward-rate-limiting",
+      "path": "/Users/aribs/Code/Project-Go-Forward-rate-limiting",
+      "family": "project-go-forward",
+      "branch": "feat/api-rate-limiting...origin/main [ahead 2, behind 73]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "Sapphire",
+      "path": "/Users/aribs/Code/Sapphire",
+      "family": "sapphire",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "canonical command repo; keep clean and use worktrees for PRs"
+    },
+    {
+      "name": "Sapphire-asfao",
+      "path": "/Users/aribs/Code/Sapphire-asfao",
+      "family": "sapphire",
+      "branch": "fix/asfao-bq-json-syntax...origin/fix/asfao-bq-json-syntax [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-awesome-mega",
+      "path": "/Users/aribs/Code/Sapphire-awesome-mega",
+      "family": "sapphire",
+      "branch": "docs/awesome-megaeth-ai-listing...origin/main [ahead 1, behind 112]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-chainlink-2",
+      "path": "/Users/aribs/Code/Sapphire-chainlink-2",
+      "family": "sapphire",
+      "branch": "feat/chainlink-extended-and-megaeth...origin/feat/arbitrum-gmx-chainlink-fallback [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-claude-md",
+      "path": "/Users/aribs/Code/Sapphire-claude-md",
+      "family": "sapphire",
+      "branch": "HEAD (no branch)",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-claude-md-tight",
+      "path": "/Users/aribs/Code/Sapphire-claude-md-tight",
+      "family": "sapphire",
+      "branch": "docs/claude-md-tight-refresh...origin/main [ahead 2, behind 93]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-cypherpunk",
+      "path": "/Users/aribs/Code/Sapphire-cypherpunk",
+      "family": "sapphire",
+      "branch": "dashboard-cypherpunk-redesign",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-gate-hermes",
+      "path": "/Users/aribs/Code/Sapphire-gate-hermes",
+      "family": "sapphire",
+      "branch": "feat/chain-health-gate-hermes-primary...origin/main [ahead 5, behind 104]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-gate-pkg",
+      "path": "/Users/aribs/Code/Sapphire-gate-pkg",
+      "family": "sapphire",
+      "branch": "feat/sentinel-gate-package...origin/feat/sentinel-gate-package [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-gemini",
+      "path": "/Users/aribs/Code/Sapphire-gemini",
+      "family": "sapphire",
+      "branch": "feat/brain-llm-gemini...origin/main [ahead 1, behind 119]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-grants",
+      "path": "/Users/aribs/Code/Sapphire-grants",
+      "family": "sapphire",
+      "branch": "docs/grant-application-drafts...origin/docs/grant-application-drafts [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-hack",
+      "path": "/Users/aribs/Code/Sapphire-hack",
+      "family": "sapphire",
+      "branch": "feat/hackathon-frontend",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-hack-perfect",
+      "path": "/Users/aribs/Code/Sapphire-hack-perfect",
+      "family": "sapphire",
+      "branch": "feat/hackathon-perfect",
+      "dirtyCount": 9,
+      "statusSummary": {
+        " M": 9
+      },
+      "guidance": "Sapphire clone with WIP; preserve patch before archive/quarantine"
+    },
+    {
+      "name": "Sapphire-hermes",
+      "path": "/Users/aribs/Code/Sapphire-hermes",
+      "family": "sapphire",
+      "branch": "feat/pyth-hermes-offchain-integration...origin/feat/pyth-hermes-offchain-integration [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-laneE-finish",
+      "path": "/Users/aribs/Code/Sapphire-laneE-finish",
+      "family": "sapphire",
+      "branch": "HEAD (no branch)",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-megaeth-b3",
+      "path": "/Users/aribs/Code/Sapphire-megaeth-b3",
+      "family": "sapphire",
+      "branch": "feat/megaeth-wave-b3-gmx-v2...origin/feat/megaeth-wave-b5-plugin-tool [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-megaeth-executor",
+      "path": "/Users/aribs/Code/Sapphire-megaeth-executor",
+      "family": "sapphire",
+      "branch": "feat/megaeth-executor-scaffold...origin/feat/megaeth-executor-scaffold [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-megaeth-stable-dash",
+      "path": "/Users/aribs/Code/Sapphire-megaeth-stable-dash",
+      "family": "sapphire",
+      "branch": "feat/megaeth-stable-health-dashboard...origin/feat/megaeth-wave-b5-plugin-tool [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-megaeth-wave-b3",
+      "path": "/Users/aribs/Code/Sapphire-megaeth-wave-b3",
+      "family": "sapphire",
+      "branch": "feat/megaeth-wave-b3-gmx...origin/feat/megaeth-wave-b5-plugin-tool [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-pitch",
+      "path": "/Users/aribs/Code/Sapphire-pitch",
+      "family": "sapphire",
+      "branch": "docs/sapphire-os-pitch...origin/main [ahead 1, behind 112]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-ruff-b007",
+      "path": "/Users/aribs/Code/Sapphire-ruff-b007",
+      "family": "sapphire",
+      "branch": "chore/lift-ruff-b007...origin/chore/lift-ruff-b007 [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "Sapphire-slither",
+      "path": "/Users/aribs/Code/Sapphire-slither",
+      "family": "sapphire",
+      "branch": "feat/sentinel-slither-patches",
+      "dirtyCount": 2,
+      "statusSummary": {
+        "??": 2
+      },
+      "guidance": "Sapphire clone with WIP; preserve patch before archive/quarantine"
+    },
+    {
+      "name": "Sapphire-subpages",
+      "path": "/Users/aribs/Code/Sapphire-subpages",
+      "family": "sapphire",
+      "branch": "feat/sapphirealpha-subpages...origin/main [ahead 1, behind 120]",
+      "dirtyCount": 5,
+      "statusSummary": {
+        "M ": 3,
+        "A ": 2
+      },
+      "guidance": "Sapphire clone with WIP; preserve patch before archive/quarantine"
+    },
+    {
+      "name": "Sapphire-uxv2",
+      "path": "/Users/aribs/Code/Sapphire-uxv2",
+      "family": "sapphire",
+      "branch": "feat/ux-overhaul-v2",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+    },
+    {
+      "name": "SapphireAlpha",
+      "path": "/Users/aribs/Code/SapphireAlpha",
+      "family": "sapphire",
+      "branch": "master",
+      "dirtyCount": 1,
+      "statusSummary": {
+        "??": 1
+      },
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "_archived-Polymarket-Trading-Bot-upstream-deleted",
+      "path": "/Users/aribs/Code/_archived-Polymarket-Trading-Bot-upstream-deleted",
+      "family": "prediction-markets",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "pgf-demo-docs-studio-readiness",
+      "path": "/Users/aribs/Code/_worktrees/pgf-demo-docs-studio-readiness",
+      "family": "other",
+      "branch": "fix/demo-docs-studio-readiness...origin/fix/demo-docs-studio-readiness [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "pgf-pristine-media-passkeys-adstudio",
+      "path": "/Users/aribs/Code/_worktrees/pgf-pristine-media-passkeys-adstudio",
+      "family": "other",
+      "branch": "fix/pristine-media-passkeys-adstudio...origin/fix/pristine-media-passkeys-adstudio [gone]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "pgf-tho-cutover-routes",
+      "path": "/Users/aribs/Code/_worktrees/pgf-tho-cutover-routes",
+      "family": "other",
+      "branch": "fix/tho-cutover-legacy-routes...origin/main [behind 6]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+    },
+    {
+      "name": "agent-opportunity-exchange",
+      "path": "/Users/aribs/Code/agent-opportunity-exchange",
+      "family": "x402-product",
+      "branch": "main...origin/main",
+      "dirtyCount": 13,
+      "statusSummary": {
+        " M": 8,
+        "??": 5
+      },
+      "guidance": "canonical x402 product kernel"
+    },
+    {
+      "name": "agent-runtime-control-plane",
+      "path": "/Users/aribs/Code/agent-runtime-control-plane",
+      "family": "other",
+      "branch": "No commits yet on main",
+      "dirtyCount": 9,
+      "statusSummary": {
+        "??": 9
+      },
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "aip-community-registry",
+      "path": "/Users/aribs/Code/aip-community-registry",
+      "family": "other",
+      "branch": "develop...origin/develop",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "career-ops-plugin",
+      "path": "/Users/aribs/Code/career-ops-plugin",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "claw-code",
+      "path": "/Users/aribs/Code/claw-code",
+      "family": "agent-runtime",
+      "branch": "main...origin/main [ahead 1]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "cyber-threat-bot",
+      "path": "/Users/aribs/Code/cyber-threat-bot",
+      "family": "cyber",
+      "branch": "master...origin/master",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "foundry-platform-python",
+      "path": "/Users/aribs/Code/foundry-platform-python",
+      "family": "other",
+      "branch": "develop...origin/develop",
+      "dirtyCount": 107,
+      "statusSummary": {
+        " M": 106,
+        "??": 1
+      },
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "fredapi",
+      "path": "/Users/aribs/Code/fredapi",
+      "family": "other",
+      "branch": "master...origin/master",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "goose",
+      "path": "/Users/aribs/Code/goose",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "hermes-agent",
+      "path": "/Users/aribs/Code/hermes-agent",
+      "family": "agent-runtime",
+      "branch": "main...ari/main [ahead 1186, behind 2]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "kimi-tools",
+      "path": "/Users/aribs/Code/kimi-tools",
+      "family": "other",
+      "branch": "main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "lightweight-charts",
+      "path": "/Users/aribs/Code/lightweight-charts",
+      "family": "other",
+      "branch": "master...origin/master",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "lumo-api",
+      "path": "/Users/aribs/Code/lumo-api",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "megaeth-agent-guard",
+      "path": "/Users/aribs/Code/megaeth-agent-guard",
+      "family": "hackathon",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "openclaw",
+      "path": "/Users/aribs/Code/openclaw",
+      "family": "agent-runtime",
+      "branch": "main...origin/main",
+      "dirtyCount": 2,
+      "statusSummary": {
+        " M": 2
+      },
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "org-platform",
+      "path": "/Users/aribs/Code/org-platform",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "palantir-python-sdk",
+      "path": "/Users/aribs/Code/palantir-python-sdk",
+      "family": "other",
+      "branch": "develop...origin/develop",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "polybot",
+      "path": "/Users/aribs/Code/polybot",
+      "family": "prediction-markets",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "polymarket-paper-trader",
+      "path": "/Users/aribs/Code/polymarket-paper-trader",
+      "family": "prediction-markets",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "polyrec",
+      "path": "/Users/aribs/Code/polyrec",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "prediction-market-backtesting",
+      "path": "/Users/aribs/Code/prediction-market-backtesting",
+      "family": "prediction-markets",
+      "branch": "main...origin/v3 [ahead 1]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "regional-intel-workbench",
+      "path": "/Users/aribs/Code/regional-intel-workbench",
+      "family": "other",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "rtk",
+      "path": "/Users/aribs/Code/rtk",
+      "family": "other",
+      "branch": "master...origin/master",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "sapphire-sentinel",
+      "path": "/Users/aribs/Code/sapphire-sentinel",
+      "family": "sapphire",
+      "branch": "main...origin/main",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "tradingview-mcp",
+      "path": "/Users/aribs/Code/tradingview-mcp",
+      "family": "tradingview",
+      "branch": "master...origin/master",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "tradingview-mcp-v2",
+      "path": "/Users/aribs/Code/tradingview-mcp-v2",
+      "family": "tradingview",
+      "branch": "main...fork/main [ahead 1]",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "wildfire-watch",
+      "path": "/Users/aribs/Code/wildfire-watch",
+      "family": "wildfire",
+      "branch": "feat/production-makeover...origin/feat/production-makeover",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    },
+    {
+      "name": "wildfire-watch-mypy",
+      "path": "/Users/aribs/Code/wildfire-watch-mypy",
+      "family": "wildfire",
+      "branch": "chore/mypy-fire-detection...origin/chore/mypy-fire-detection",
+      "dirtyCount": 0,
+      "statusSummary": {},
+      "guidance": "classify during focused cleanup pass"
+    }
+  ],
+  "families": {
+    "hackathon": {
+      "repoCount": 2,
+      "dirtyCount": 0,
+      "repos": [
+        {
+          "name": "0guard",
+          "path": "/Users/aribs/Code/0guard",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "megaeth-agent-guard",
+          "path": "/Users/aribs/Code/megaeth-agent-guard",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    },
+    "other": {
+      "repoCount": 21,
+      "dirtyCount": 2,
+      "repos": [
+        {
+          "name": "AgenticArigato",
+          "path": "/Users/aribs/Code/AgenticArigato",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "Cointracker",
+          "path": "/Users/aribs/Code/Cointracker",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "Kronos",
+          "path": "/Users/aribs/Code/Kronos",
+          "branch": "master...origin/master",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "OpenBB",
+          "path": "/Users/aribs/Code/OpenBB",
+          "branch": "develop...origin/develop",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "pgf-demo-docs-studio-readiness",
+          "path": "/Users/aribs/Code/_worktrees/pgf-demo-docs-studio-readiness",
+          "branch": "fix/demo-docs-studio-readiness...origin/fix/demo-docs-studio-readiness [gone]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        },
+        {
+          "name": "pgf-pristine-media-passkeys-adstudio",
+          "path": "/Users/aribs/Code/_worktrees/pgf-pristine-media-passkeys-adstudio",
+          "branch": "fix/pristine-media-passkeys-adstudio...origin/fix/pristine-media-passkeys-adstudio [gone]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        },
+        {
+          "name": "pgf-tho-cutover-routes",
+          "path": "/Users/aribs/Code/_worktrees/pgf-tho-cutover-routes",
+          "branch": "fix/tho-cutover-legacy-routes...origin/main [behind 6]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        },
+        {
+          "name": "agent-runtime-control-plane",
+          "path": "/Users/aribs/Code/agent-runtime-control-plane",
+          "branch": "No commits yet on main",
+          "dirtyCount": 9,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "aip-community-registry",
+          "path": "/Users/aribs/Code/aip-community-registry",
+          "branch": "develop...origin/develop",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "career-ops-plugin",
+          "path": "/Users/aribs/Code/career-ops-plugin",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "foundry-platform-python",
+          "path": "/Users/aribs/Code/foundry-platform-python",
+          "branch": "develop...origin/develop",
+          "dirtyCount": 107,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "fredapi",
+          "path": "/Users/aribs/Code/fredapi",
+          "branch": "master...origin/master",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "goose",
+          "path": "/Users/aribs/Code/goose",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "kimi-tools",
+          "path": "/Users/aribs/Code/kimi-tools",
+          "branch": "main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "lightweight-charts",
+          "path": "/Users/aribs/Code/lightweight-charts",
+          "branch": "master...origin/master",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "lumo-api",
+          "path": "/Users/aribs/Code/lumo-api",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "org-platform",
+          "path": "/Users/aribs/Code/org-platform",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "palantir-python-sdk",
+          "path": "/Users/aribs/Code/palantir-python-sdk",
+          "branch": "develop...origin/develop",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "polyrec",
+          "path": "/Users/aribs/Code/polyrec",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "regional-intel-workbench",
+          "path": "/Users/aribs/Code/regional-intel-workbench",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "rtk",
+          "path": "/Users/aribs/Code/rtk",
+          "branch": "master...origin/master",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    },
+    "agent-runtime": {
+      "repoCount": 4,
+      "dirtyCount": 1,
+      "repos": [
+        {
+          "name": "NemoClaw",
+          "path": "/Users/aribs/Code/NemoClaw",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "claw-code",
+          "path": "/Users/aribs/Code/claw-code",
+          "branch": "main...origin/main [ahead 1]",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "hermes-agent",
+          "path": "/Users/aribs/Code/hermes-agent",
+          "branch": "main...ari/main [ahead 1186, behind 2]",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "openclaw",
+          "path": "/Users/aribs/Code/openclaw",
+          "branch": "main...origin/main",
+          "dirtyCount": 2,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    },
+    "project-go-forward": {
+      "repoCount": 6,
+      "dirtyCount": 0,
+      "repos": [
+        {
+          "name": "Project-Go-Forward",
+          "path": "/Users/aribs/Code/Project-Go-Forward",
+          "branch": "main...origin/main [behind 1]",
+          "dirtyCount": 0,
+          "guidance": "protected THO repo; no edits unless explicitly opened"
+        },
+        {
+          "name": "Project-Go-Forward-a11y",
+          "path": "/Users/aribs/Code/Project-Go-Forward-a11y",
+          "branch": "feat/a11y-customer-pages...origin/chore/frontend-vitest-harness [gone]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        },
+        {
+          "name": "Project-Go-Forward-adstudio-css",
+          "path": "/Users/aribs/Code/Project-Go-Forward-adstudio-css",
+          "branch": "refactor/adstudio-css-tailwind...origin/main [ahead 2, behind 73]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        },
+        {
+          "name": "Project-Go-Forward-gmail-inbound",
+          "path": "/Users/aribs/Code/Project-Go-Forward-gmail-inbound",
+          "branch": "feat/gmail-inbound-scaffold...origin/main [ahead 2, behind 73]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        },
+        {
+          "name": "Project-Go-Forward-photo-classify",
+          "path": "/Users/aribs/Code/Project-Go-Forward-photo-classify",
+          "branch": "feat/inventory-photo-classification...origin/main [ahead 2, behind 73]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        },
+        {
+          "name": "Project-Go-Forward-rate-limiting",
+          "path": "/Users/aribs/Code/Project-Go-Forward-rate-limiting",
+          "branch": "feat/api-rate-limiting...origin/main [ahead 2, behind 73]",
+          "dirtyCount": 0,
+          "guidance": "PGF clone/worktree candidate for archive after PR dependency check"
+        }
+      ]
+    },
+    "sapphire": {
+      "repoCount": 26,
+      "dirtyCount": 4,
+      "repos": [
+        {
+          "name": "Sapphire",
+          "path": "/Users/aribs/Code/Sapphire",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "canonical command repo; keep clean and use worktrees for PRs"
+        },
+        {
+          "name": "Sapphire-asfao",
+          "path": "/Users/aribs/Code/Sapphire-asfao",
+          "branch": "fix/asfao-bq-json-syntax...origin/fix/asfao-bq-json-syntax [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-awesome-mega",
+          "path": "/Users/aribs/Code/Sapphire-awesome-mega",
+          "branch": "docs/awesome-megaeth-ai-listing...origin/main [ahead 1, behind 112]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-chainlink-2",
+          "path": "/Users/aribs/Code/Sapphire-chainlink-2",
+          "branch": "feat/chainlink-extended-and-megaeth...origin/feat/arbitrum-gmx-chainlink-fallback [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-claude-md",
+          "path": "/Users/aribs/Code/Sapphire-claude-md",
+          "branch": "HEAD (no branch)",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-claude-md-tight",
+          "path": "/Users/aribs/Code/Sapphire-claude-md-tight",
+          "branch": "docs/claude-md-tight-refresh...origin/main [ahead 2, behind 93]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-cypherpunk",
+          "path": "/Users/aribs/Code/Sapphire-cypherpunk",
+          "branch": "dashboard-cypherpunk-redesign",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-gate-hermes",
+          "path": "/Users/aribs/Code/Sapphire-gate-hermes",
+          "branch": "feat/chain-health-gate-hermes-primary...origin/main [ahead 5, behind 104]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-gate-pkg",
+          "path": "/Users/aribs/Code/Sapphire-gate-pkg",
+          "branch": "feat/sentinel-gate-package...origin/feat/sentinel-gate-package [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-gemini",
+          "path": "/Users/aribs/Code/Sapphire-gemini",
+          "branch": "feat/brain-llm-gemini...origin/main [ahead 1, behind 119]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-grants",
+          "path": "/Users/aribs/Code/Sapphire-grants",
+          "branch": "docs/grant-application-drafts...origin/docs/grant-application-drafts [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-hack",
+          "path": "/Users/aribs/Code/Sapphire-hack",
+          "branch": "feat/hackathon-frontend",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-hack-perfect",
+          "path": "/Users/aribs/Code/Sapphire-hack-perfect",
+          "branch": "feat/hackathon-perfect",
+          "dirtyCount": 9,
+          "guidance": "Sapphire clone with WIP; preserve patch before archive/quarantine"
+        },
+        {
+          "name": "Sapphire-hermes",
+          "path": "/Users/aribs/Code/Sapphire-hermes",
+          "branch": "feat/pyth-hermes-offchain-integration...origin/feat/pyth-hermes-offchain-integration [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-laneE-finish",
+          "path": "/Users/aribs/Code/Sapphire-laneE-finish",
+          "branch": "HEAD (no branch)",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-megaeth-b3",
+          "path": "/Users/aribs/Code/Sapphire-megaeth-b3",
+          "branch": "feat/megaeth-wave-b3-gmx-v2...origin/feat/megaeth-wave-b5-plugin-tool [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-megaeth-executor",
+          "path": "/Users/aribs/Code/Sapphire-megaeth-executor",
+          "branch": "feat/megaeth-executor-scaffold...origin/feat/megaeth-executor-scaffold [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-megaeth-stable-dash",
+          "path": "/Users/aribs/Code/Sapphire-megaeth-stable-dash",
+          "branch": "feat/megaeth-stable-health-dashboard...origin/feat/megaeth-wave-b5-plugin-tool [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-megaeth-wave-b3",
+          "path": "/Users/aribs/Code/Sapphire-megaeth-wave-b3",
+          "branch": "feat/megaeth-wave-b3-gmx...origin/feat/megaeth-wave-b5-plugin-tool [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-pitch",
+          "path": "/Users/aribs/Code/Sapphire-pitch",
+          "branch": "docs/sapphire-os-pitch...origin/main [ahead 1, behind 112]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-ruff-b007",
+          "path": "/Users/aribs/Code/Sapphire-ruff-b007",
+          "branch": "chore/lift-ruff-b007...origin/chore/lift-ruff-b007 [gone]",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "Sapphire-slither",
+          "path": "/Users/aribs/Code/Sapphire-slither",
+          "branch": "feat/sentinel-slither-patches",
+          "dirtyCount": 2,
+          "guidance": "Sapphire clone with WIP; preserve patch before archive/quarantine"
+        },
+        {
+          "name": "Sapphire-subpages",
+          "path": "/Users/aribs/Code/Sapphire-subpages",
+          "branch": "feat/sapphirealpha-subpages...origin/main [ahead 1, behind 120]",
+          "dirtyCount": 5,
+          "guidance": "Sapphire clone with WIP; preserve patch before archive/quarantine"
+        },
+        {
+          "name": "Sapphire-uxv2",
+          "path": "/Users/aribs/Code/Sapphire-uxv2",
+          "branch": "feat/ux-overhaul-v2",
+          "dirtyCount": 0,
+          "guidance": "Sapphire clone candidate for archive/quarantine after confirming no dependency"
+        },
+        {
+          "name": "SapphireAlpha",
+          "path": "/Users/aribs/Code/SapphireAlpha",
+          "branch": "master",
+          "dirtyCount": 1,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "sapphire-sentinel",
+          "path": "/Users/aribs/Code/sapphire-sentinel",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    },
+    "prediction-markets": {
+      "repoCount": 4,
+      "dirtyCount": 0,
+      "repos": [
+        {
+          "name": "_archived-Polymarket-Trading-Bot-upstream-deleted",
+          "path": "/Users/aribs/Code/_archived-Polymarket-Trading-Bot-upstream-deleted",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "polybot",
+          "path": "/Users/aribs/Code/polybot",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "polymarket-paper-trader",
+          "path": "/Users/aribs/Code/polymarket-paper-trader",
+          "branch": "main...origin/main",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "prediction-market-backtesting",
+          "path": "/Users/aribs/Code/prediction-market-backtesting",
+          "branch": "main...origin/v3 [ahead 1]",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    },
+    "x402-product": {
+      "repoCount": 1,
+      "dirtyCount": 1,
+      "repos": [
+        {
+          "name": "agent-opportunity-exchange",
+          "path": "/Users/aribs/Code/agent-opportunity-exchange",
+          "branch": "main...origin/main",
+          "dirtyCount": 13,
+          "guidance": "canonical x402 product kernel"
+        }
+      ]
+    },
+    "cyber": {
+      "repoCount": 1,
+      "dirtyCount": 0,
+      "repos": [
+        {
+          "name": "cyber-threat-bot",
+          "path": "/Users/aribs/Code/cyber-threat-bot",
+          "branch": "master...origin/master",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    },
+    "tradingview": {
+      "repoCount": 2,
+      "dirtyCount": 0,
+      "repos": [
+        {
+          "name": "tradingview-mcp",
+          "path": "/Users/aribs/Code/tradingview-mcp",
+          "branch": "master...origin/master",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "tradingview-mcp-v2",
+          "path": "/Users/aribs/Code/tradingview-mcp-v2",
+          "branch": "main...fork/main [ahead 1]",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    },
+    "wildfire": {
+      "repoCount": 2,
+      "dirtyCount": 0,
+      "repos": [
+        {
+          "name": "wildfire-watch",
+          "path": "/Users/aribs/Code/wildfire-watch",
+          "branch": "feat/production-makeover...origin/feat/production-makeover",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        },
+        {
+          "name": "wildfire-watch-mypy",
+          "path": "/Users/aribs/Code/wildfire-watch-mypy",
+          "branch": "chore/mypy-fire-detection...origin/chore/mypy-fire-detection",
+          "dirtyCount": 0,
+          "guidance": "classify during focused cleanup pass"
+        }
+      ]
+    }
+  }
+}

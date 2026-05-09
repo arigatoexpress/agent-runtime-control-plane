@@ -1,0 +1,18 @@
+{
+  "name": "agent-runtime-control-plane",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dry-run migration control plane for local-machine, Telegram, and runtime agent surfaces.",
+  "type": "module",
+  "scripts": {
+    "repo-map": "node scripts/git-roots.mjs",
+    "repo-map:write": "node scripts/git-roots.mjs --write data/repo-map.json",
+    "inventory": "node scripts/inventory.mjs",
+    "inventory:write": "node scripts/inventory.mjs --write data/latest-inventory.json",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "npm test && node --check scripts/inventory.mjs && node --check scripts/git-roots.mjs && npm run inventory && npm run repo-map"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
