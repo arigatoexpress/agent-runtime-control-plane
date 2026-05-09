@@ -5,10 +5,13 @@
 - Run `npm run inventory:write` after any meaningful source repo change.
 - Run `npm run repo-map:write` before repo cleanup decisions.
 - Run `npm run surfaces:write` before runtime-control migration decisions.
+- Run `npm run quarantine-plan` before archiving stale clone repos.
 - Use `data/latest-inventory.json` to choose one runtime category at a time.
 - Use `data/repo-map.json` to separate canonical repos from stale clones.
 - Use `data/runtime-surfaces.json` to identify specific Telegram, Hermes,
   LaunchAgent, Windows, and Pi files that need a shadow adapter or runbook.
+- Use `data/quarantine-plan.md` to preserve dirty clone state before any archive
+  move.
 
 ## Next Safe PRs
 
