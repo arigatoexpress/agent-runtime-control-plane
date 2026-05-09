@@ -9,8 +9,11 @@
     "repo-map:write": "node scripts/git-roots.mjs --write data/repo-map.json",
     "inventory": "node scripts/inventory.mjs",
     "inventory:write": "node scripts/inventory.mjs --write data/latest-inventory.json",
+    "surfaces": "node scripts/runtime-surfaces.mjs",
+    "surfaces:write": "node scripts/runtime-surfaces.mjs --write data/runtime-surfaces.json",
+    "surfaces:summary": "node scripts/runtime-surfaces.mjs --write-summary data/runtime-surfaces-summary.json",
     "test": "node --test tests/*.test.mjs",
-    "verify": "npm test && node --check scripts/inventory.mjs && node --check scripts/git-roots.mjs && npm run inventory && npm run repo-map"
+    "verify": "npm test && node --check scripts/inventory.mjs && node --check scripts/git-roots.mjs && node --check scripts/runtime-surfaces.mjs && npm run inventory && npm run repo-map && npm run surfaces"
   },
   "engines": {
     "node": ">=22"
