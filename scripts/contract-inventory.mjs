@@ -41,6 +41,20 @@ const candidates = [
         schema: "aoe.contract_bundle.v1",
         access: "agent-discovery",
         files: ["src/app.ts", "src/contracts.ts", "tests/app.test.ts", "tests/contracts.test.ts"]
+      },
+      {
+        id: "aoe-pay-sh-rail-roadmap",
+        route: "/v1/x402/status",
+        schema: "aoe.x402.status.v1",
+        access: "public-payment-rail-readiness",
+        files: [
+          "src/app.ts",
+          "src/contracts.ts",
+          "src/x402-config.ts",
+          "tests/contracts.test.ts",
+          "tests/x402-config.test.ts",
+          "docs/X402_TESTNET.md"
+        ]
       }
     ],
     preferredNext: "Keep as the canonical paid API contract source; downstream repos consume it instead of copying x402/payment logic."
@@ -85,6 +99,20 @@ const candidates = [
         schema: "service-health",
         access: "health-readiness",
         files: ["src/sapphire_sentinel/app.py", "tests/test_app.py"]
+      },
+      {
+        id: "sentinel-packaged-workbench-assets",
+        route: "/static/app.js",
+        schema: "packaged-frontend-assets",
+        access: "browser-smoke-packaged-assets",
+        files: [
+          "src/sapphire_sentinel/templates/index.html",
+          "src/sapphire_sentinel/static/styles.css",
+          "src/sapphire_sentinel/static/app.js",
+          "pyproject.toml",
+          "Dockerfile",
+          "tests/test_app.py"
+        ]
       }
     ],
     preferredNext: "Keep as a standalone x402 consumer; use the frontend contract for browser-smoke automation before deeper UI polish."
@@ -107,6 +135,20 @@ const candidates = [
         schema: "service-health",
         access: "health-readiness",
         files: ["src/megaeth_agent_guard/app.py", "tests/test_app.py"]
+      },
+      {
+        id: "megaeth-packaged-workbench-assets",
+        route: "/static/app.js",
+        schema: "packaged-frontend-assets",
+        access: "browser-smoke-packaged-assets",
+        files: [
+          "src/megaeth_agent_guard/templates/index.html",
+          "src/megaeth_agent_guard/static/styles.css",
+          "src/megaeth_agent_guard/static/app.js",
+          "pyproject.toml",
+          ".github/workflows/ci.yml",
+          "tests/test_app.py"
+        ]
       }
     ],
     preferredNext: "Promote the browser-smoke contract into the runtime catalog and keep live scouting as explicit read-only mode."
@@ -129,6 +171,19 @@ const candidates = [
         schema: "0guard.external_action_contracts.v1",
         access: "dry-run-action-contract",
         files: ["src/guard0/app.py", "tests/test_app.py"]
+      },
+      {
+        id: "0guard-packaged-workbench-assets",
+        route: "/static/app.js",
+        schema: "packaged-frontend-assets",
+        access: "browser-smoke-packaged-assets",
+        files: [
+          "src/guard0/templates/index.html",
+          "src/guard0/static/styles.css",
+          "src/guard0/static/app.js",
+          "pyproject.toml",
+          "tests/test_app.py"
+        ]
       }
     ],
     preferredNext: "Use the external-action contract to quarantine posting/deploy/signing scripts before frontend extraction."
@@ -222,8 +277,7 @@ function scanCandidate(candidate) {
     }
     const combined = texts.join("\n");
     const routePresent = combined.includes(contract.route);
-    const schemaPresent =
-      contract.schema === "service-health" || combined.includes(contract.schema);
+    const schemaPresent = isMetadataSchema(contract.schema) || combined.includes(contract.schema);
     const detected = routePresent && schemaPresent;
     result.contracts.push({
       id: contract.id,
@@ -245,6 +299,10 @@ function scanCandidate(candidate) {
   result.counts.missingContracts = result.counts.expectedContracts - result.counts.detectedContracts;
   classify(result);
   return result;
+}
+
+function isMetadataSchema(schema) {
+  return schema === "service-health" || schema === "packaged-frontend-assets";
 }
 
 function summarizeEvidenceFile(root, repoPath) {

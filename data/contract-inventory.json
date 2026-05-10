@@ -1,6 +1,6 @@
 {
   "schema": "aribs.integration_contract_inventory.v1",
-  "generatedAt": "2026-05-10T11:30:35.345Z",
+  "generatedAt": "2026-05-10T13:30:07.519Z",
   "safety": {
     "mode": "read-only",
     "storesSourceLines": false,
@@ -40,12 +40,12 @@
             {
               "path": "src/contracts.ts",
               "exists": true,
-              "bytes": 17276
+              "bytes": 17453
             },
             {
               "path": "tests/contracts.test.ts",
               "exists": true,
-              "bytes": 3661
+              "bytes": 4274
             }
           ]
         },
@@ -92,7 +92,7 @@
             {
               "path": "src/contracts.ts",
               "exists": true,
-              "bytes": 17276
+              "bytes": 17453
             },
             {
               "path": "tests/app.test.ts",
@@ -102,7 +102,48 @@
             {
               "path": "tests/contracts.test.ts",
               "exists": true,
-              "bytes": 3661
+              "bytes": 4274
+            }
+          ]
+        },
+        {
+          "id": "aoe-pay-sh-rail-roadmap",
+          "route": "/v1/x402/status",
+          "schema": "aoe.x402.status.v1",
+          "access": "public-payment-rail-readiness",
+          "detected": true,
+          "routePresent": true,
+          "schemaPresent": true,
+          "evidenceFiles": [
+            {
+              "path": "src/app.ts",
+              "exists": true,
+              "bytes": 26039
+            },
+            {
+              "path": "src/contracts.ts",
+              "exists": true,
+              "bytes": 17453
+            },
+            {
+              "path": "src/x402-config.ts",
+              "exists": true,
+              "bytes": 6791
+            },
+            {
+              "path": "tests/contracts.test.ts",
+              "exists": true,
+              "bytes": 4274
+            },
+            {
+              "path": "tests/x402-config.test.ts",
+              "exists": true,
+              "bytes": 2510
+            },
+            {
+              "path": "docs/X402_TESTNET.md",
+              "exists": true,
+              "bytes": 3150
             }
           ]
         }
@@ -161,13 +202,13 @@
         "sapphirealpha.market_context.v1"
       ],
       "counts": {
-        "expectedContracts": 3,
-        "detectedContracts": 3,
+        "expectedContracts": 4,
+        "detectedContracts": 4,
         "missingContracts": 0,
         "detectedRoutes": 26,
         "detectedSchemas": 23,
-        "evidenceFiles": 10,
-        "tests": 4
+        "evidenceFiles": 16,
+        "tests": 6
       },
       "recommendation": "Keep as the canonical paid API contract source; downstream repos consume it instead of copying x402/payment logic."
     },
@@ -389,12 +430,12 @@
             {
               "path": "src/sapphire_sentinel/app.py",
               "exists": true,
-              "bytes": 8121
+              "bytes": 8024
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 7962
+              "bytes": 8216
             }
           ]
         },
@@ -410,12 +451,53 @@
             {
               "path": "src/sapphire_sentinel/app.py",
               "exists": true,
-              "bytes": 8121
+              "bytes": 8024
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 7962
+              "bytes": 8216
+            }
+          ]
+        },
+        {
+          "id": "sentinel-packaged-workbench-assets",
+          "route": "/static/app.js",
+          "schema": "packaged-frontend-assets",
+          "access": "browser-smoke-packaged-assets",
+          "detected": true,
+          "routePresent": true,
+          "schemaPresent": true,
+          "evidenceFiles": [
+            {
+              "path": "src/sapphire_sentinel/templates/index.html",
+              "exists": true,
+              "bytes": 5877
+            },
+            {
+              "path": "src/sapphire_sentinel/static/styles.css",
+              "exists": true,
+              "bytes": 8773
+            },
+            {
+              "path": "src/sapphire_sentinel/static/app.js",
+              "exists": true,
+              "bytes": 11477
+            },
+            {
+              "path": "pyproject.toml",
+              "exists": true,
+              "bytes": 788
+            },
+            {
+              "path": "Dockerfile",
+              "exists": true,
+              "bytes": 1480
+            },
+            {
+              "path": "tests/test_app.py",
+              "exists": true,
+              "bytes": 8216
             }
           ]
         }
@@ -439,13 +521,13 @@
         "sapphire_sentinel.frontend_contract.v1"
       ],
       "counts": {
-        "expectedContracts": 2,
-        "detectedContracts": 2,
+        "expectedContracts": 3,
+        "detectedContracts": 3,
         "missingContracts": 0,
         "detectedRoutes": 13,
         "detectedSchemas": 1,
-        "evidenceFiles": 4,
-        "tests": 2
+        "evidenceFiles": 10,
+        "tests": 3
       },
       "recommendation": "Keep as a standalone x402 consumer; use the frontend contract for browser-smoke automation before deeper UI polish."
     },
@@ -473,12 +555,12 @@
             {
               "path": "src/megaeth_agent_guard/app.py",
               "exists": true,
-              "bytes": 7723
+              "bytes": 7626
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 5623
+              "bytes": 5879
             }
           ]
         },
@@ -494,12 +576,53 @@
             {
               "path": "src/megaeth_agent_guard/app.py",
               "exists": true,
-              "bytes": 7723
+              "bytes": 7626
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 5623
+              "bytes": 5879
+            }
+          ]
+        },
+        {
+          "id": "megaeth-packaged-workbench-assets",
+          "route": "/static/app.js",
+          "schema": "packaged-frontend-assets",
+          "access": "browser-smoke-packaged-assets",
+          "detected": true,
+          "routePresent": true,
+          "schemaPresent": true,
+          "evidenceFiles": [
+            {
+              "path": "src/megaeth_agent_guard/templates/index.html",
+              "exists": true,
+              "bytes": 4126
+            },
+            {
+              "path": "src/megaeth_agent_guard/static/styles.css",
+              "exists": true,
+              "bytes": 6785
+            },
+            {
+              "path": "src/megaeth_agent_guard/static/app.js",
+              "exists": true,
+              "bytes": 4513
+            },
+            {
+              "path": "pyproject.toml",
+              "exists": true,
+              "bytes": 759
+            },
+            {
+              "path": ".github/workflows/ci.yml",
+              "exists": true,
+              "bytes": 718
+            },
+            {
+              "path": "tests/test_app.py",
+              "exists": true,
+              "bytes": 5879
             }
           ]
         }
@@ -521,13 +644,13 @@
         "megaeth_agent_guard.frontend_contract.v1"
       ],
       "counts": {
-        "expectedContracts": 2,
-        "detectedContracts": 2,
+        "expectedContracts": 3,
+        "detectedContracts": 3,
         "missingContracts": 0,
         "detectedRoutes": 11,
         "detectedSchemas": 1,
-        "evidenceFiles": 4,
-        "tests": 2
+        "evidenceFiles": 10,
+        "tests": 3
       },
       "recommendation": "Promote the browser-smoke contract into the runtime catalog and keep live scouting as explicit read-only mode."
     },
@@ -555,12 +678,12 @@
             {
               "path": "src/guard0/app.py",
               "exists": true,
-              "bytes": 17012
+              "bytes": 6435
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 5424
+              "bytes": 6019
             }
           ]
         },
@@ -576,12 +699,48 @@
             {
               "path": "src/guard0/app.py",
               "exists": true,
-              "bytes": 17012
+              "bytes": 6435
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 5424
+              "bytes": 6019
+            }
+          ]
+        },
+        {
+          "id": "0guard-packaged-workbench-assets",
+          "route": "/static/app.js",
+          "schema": "packaged-frontend-assets",
+          "access": "browser-smoke-packaged-assets",
+          "detected": true,
+          "routePresent": true,
+          "schemaPresent": true,
+          "evidenceFiles": [
+            {
+              "path": "src/guard0/templates/index.html",
+              "exists": true,
+              "bytes": 4034
+            },
+            {
+              "path": "src/guard0/static/styles.css",
+              "exists": true,
+              "bytes": 3515
+            },
+            {
+              "path": "src/guard0/static/app.js",
+              "exists": true,
+              "bytes": 2298
+            },
+            {
+              "path": "pyproject.toml",
+              "exists": true,
+              "bytes": 1036
+            },
+            {
+              "path": "tests/test_app.py",
+              "exists": true,
+              "bytes": 6019
             }
           ]
         }
@@ -603,13 +762,13 @@
         "0guard.frontend_contract.v1"
       ],
       "counts": {
-        "expectedContracts": 2,
-        "detectedContracts": 2,
+        "expectedContracts": 3,
+        "detectedContracts": 3,
         "missingContracts": 0,
         "detectedRoutes": 10,
         "detectedSchemas": 2,
-        "evidenceFiles": 4,
-        "tests": 2
+        "evidenceFiles": 9,
+        "tests": 3
       },
       "recommendation": "Use the external-action contract to quarantine posting/deploy/signing scripts before frontend extraction."
     }
@@ -619,8 +778,8 @@
     "existingRepoCount": 5,
     "contractReadyCount": 5,
     "partialContractCount": 0,
-    "expectedContractCount": 11,
-    "detectedContractCount": 11,
+    "expectedContractCount": 15,
+    "detectedContractCount": 15,
     "dirtyRepoCount": 0,
     "byReadiness": {
       "contract-ready": 5
