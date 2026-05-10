@@ -17,12 +17,20 @@ across the current workspace:
 npm test
 npm run inventory
 npm run inventory:write
+npm run contracts
+npm run contracts:write
 npm run verify
 ```
 
 `npm run inventory:write` writes `data/latest-inventory.json`. The report stores
 paths and category counts only. It does not store source lines, secrets, env
 values, message bodies, payment headers, or runtime payloads.
+
+`npm run contracts:write` writes `data/contract-inventory.md` and
+`data/contract-inventory.json`. That report tracks machine-readable contract and
+readiness endpoints across the x402, regional-intel, and hackathon satellite
+repos so this control plane can consume contracts instead of absorbing product
+code.
 
 ## Current Strategy
 
@@ -41,4 +49,3 @@ Target split:
   a tested replacement and rollback.
 
 See [docs/MIGRATION_STRATEGY.md](docs/MIGRATION_STRATEGY.md).
-
