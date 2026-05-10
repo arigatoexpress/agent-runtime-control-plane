@@ -1,6 +1,6 @@
 {
   "schema": "aribs.integration_contract_inventory.v1",
-  "generatedAt": "2026-05-10T13:30:07.519Z",
+  "generatedAt": "2026-05-10T17:34:49.798Z",
   "safety": {
     "mode": "read-only",
     "storesSourceLines": false,
@@ -17,11 +17,47 @@
       "productLane": "x402 paid intelligence kernel",
       "exists": true,
       "git": {
-        "branch": "feat/buyer-contract-bundle",
+        "branch": "main",
         "dirty": false
       },
       "readiness": "contract-ready",
       "risk": "low",
+      "browserSmoke": {
+        "ready": true,
+        "scriptPresent": true,
+        "command": "npm run browser:smoke",
+        "ciIntegrated": true,
+        "evidenceFiles": [
+          {
+            "path": "browser-smoke/aoe-workbench.spec.ts",
+            "exists": true,
+            "bytes": 2498
+          },
+          {
+            "path": "playwright.config.ts",
+            "exists": true,
+            "bytes": 738
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "exists": true,
+            "bytes": 757
+          },
+          {
+            "path": "package.json",
+            "exists": true,
+            "bytes": 1500
+          },
+          {
+            "path": "README.md",
+            "exists": true,
+            "bytes": 7604
+          }
+        ],
+        "assertedDisabledCapabilities": [
+          "liveProviderCredentialsAllowed"
+        ]
+      },
       "contracts": [
         {
           "id": "aoe-contract-bundle",
@@ -223,6 +259,25 @@
       },
       "readiness": "contract-ready",
       "risk": "low",
+      "browserSmoke": {
+        "ready": false,
+        "scriptPresent": false,
+        "command": null,
+        "ciIntegrated": false,
+        "evidenceFiles": [
+          {
+            "path": ".github/workflows/ci.yml",
+            "exists": true,
+            "bytes": 3221
+          },
+          {
+            "path": "README.md",
+            "exists": true,
+            "bytes": 14094
+          }
+        ],
+        "assertedDisabledCapabilities": []
+      },
       "contracts": [
         {
           "id": "regional-route-readiness",
@@ -412,11 +467,40 @@
       "productLane": "x402/MegaETH safety consumer demo",
       "exists": true,
       "git": {
-        "branch": "feat/frontend-workbench-shell",
+        "branch": "main",
         "dirty": false
       },
       "readiness": "contract-ready",
       "risk": "low",
+      "browserSmoke": {
+        "ready": true,
+        "scriptPresent": true,
+        "command": "python scripts/browser_smoke.py",
+        "ciIntegrated": true,
+        "evidenceFiles": [
+          {
+            "path": "scripts/browser_smoke.py",
+            "exists": true,
+            "bytes": 6222
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "exists": true,
+            "bytes": 2318
+          },
+          {
+            "path": "README.md",
+            "exists": true,
+            "bytes": 8486
+          }
+        ],
+        "assertedDisabledCapabilities": [
+          "executionEnabled",
+          "liveSettlementEnabled",
+          "moneyMovementEnabled",
+          "telegramSendsEnabled"
+        ]
+      },
       "contracts": [
         {
           "id": "sentinel-frontend-contract",
@@ -435,7 +519,7 @@
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 8216
+              "bytes": 8513
             }
           ]
         },
@@ -456,7 +540,7 @@
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 8216
+              "bytes": 8513
             }
           ]
         },
@@ -487,17 +571,17 @@
             {
               "path": "pyproject.toml",
               "exists": true,
-              "bytes": 788
+              "bytes": 812
             },
             {
               "path": "Dockerfile",
               "exists": true,
-              "bytes": 1480
+              "bytes": 1599
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 8216
+              "bytes": 8513
             }
           ]
         }
@@ -537,11 +621,38 @@
       "productLane": "MegaETH agent-domain guard",
       "exists": true,
       "git": {
-        "branch": "feat/static-workbench-assets",
+        "branch": "main",
         "dirty": false
       },
       "readiness": "contract-ready",
       "risk": "low",
+      "browserSmoke": {
+        "ready": true,
+        "scriptPresent": true,
+        "command": "python scripts/browser_smoke.py",
+        "ciIntegrated": true,
+        "evidenceFiles": [
+          {
+            "path": "scripts/browser_smoke.py",
+            "exists": true,
+            "bytes": 5584
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "exists": true,
+            "bytes": 1184
+          },
+          {
+            "path": "README.md",
+            "exists": true,
+            "bytes": 4170
+          }
+        ],
+        "assertedDisabledCapabilities": [
+          "liveSettlementEnabled",
+          "moneyMovementEnabled"
+        ]
+      },
       "contracts": [
         {
           "id": "megaeth-frontend-contract",
@@ -612,12 +723,12 @@
             {
               "path": "pyproject.toml",
               "exists": true,
-              "bytes": 759
+              "bytes": 781
             },
             {
               "path": ".github/workflows/ci.yml",
               "exists": true,
-              "bytes": 718
+              "bytes": 1184
             },
             {
               "path": "tests/test_app.py",
@@ -660,11 +771,40 @@
       "productLane": "0G / crypto-hack guard",
       "exists": true,
       "git": {
-        "branch": "feat/frontend-action-contract",
+        "branch": "main",
         "dirty": false
       },
       "readiness": "contract-ready",
       "risk": "medium",
+      "browserSmoke": {
+        "ready": true,
+        "scriptPresent": true,
+        "command": "python scripts/browser_smoke.py",
+        "ciIntegrated": true,
+        "evidenceFiles": [
+          {
+            "path": "scripts/browser_smoke.py",
+            "exists": true,
+            "bytes": 6857
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "exists": true,
+            "bytes": 1819
+          },
+          {
+            "path": "README.md",
+            "exists": true,
+            "bytes": 8741
+          }
+        ],
+        "assertedDisabledCapabilities": [
+          "moneyMovementEnabled",
+          "telegramSendsEnabled",
+          "transactionSigningEnabled",
+          "workbenchCanTriggerLiveActions"
+        ]
+      },
       "contracts": [
         {
           "id": "0guard-frontend-contract",
@@ -678,12 +818,12 @@
             {
               "path": "src/guard0/app.py",
               "exists": true,
-              "bytes": 6435
+              "bytes": 6522
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 6019
+              "bytes": 6435
             }
           ]
         },
@@ -699,12 +839,12 @@
             {
               "path": "src/guard0/app.py",
               "exists": true,
-              "bytes": 6435
+              "bytes": 6522
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 6019
+              "bytes": 6435
             }
           ]
         },
@@ -735,12 +875,12 @@
             {
               "path": "pyproject.toml",
               "exists": true,
-              "bytes": 1036
+              "bytes": 1060
             },
             {
               "path": "tests/test_app.py",
               "exists": true,
-              "bytes": 6019
+              "bytes": 6435
             }
           ]
         }
@@ -781,6 +921,7 @@
     "expectedContractCount": 15,
     "detectedContractCount": 15,
     "dirtyRepoCount": 0,
+    "browserSmokeReadyCount": 4,
     "byReadiness": {
       "contract-ready": 5
     },

@@ -240,6 +240,7 @@ function scanCandidate(candidate) {
     git: exists ? gitPosture(candidate.path) : { branch: null, dirty: null },
     readiness: "missing",
     risk: "unknown",
+    browserSmoke: exists ? browserSmokePosture(candidate.path) : emptyBrowserSmokePosture(),
     contracts: [],
     detectedRoutes: [],
     detectedSchemas: [],
@@ -313,6 +314,79 @@ function summarizeEvidenceFile(root, repoPath) {
   return { path: repoPath, exists: true, bytes: statSync(absolute).size };
 }
 
+function emptyBrowserSmokePosture() {
+  return {
+    ready: false,
+    scriptPresent: false,
+    command: null,
+    ciIntegrated: false,
+    evidenceFiles: [],
+    assertedDisabledCapabilities: []
+  };
+}
+
+function browserSmokePosture(root) {
+  const evidencePaths = [
+    "scripts/browser_smoke.py",
+    "browser-smoke/aoe-workbench.spec.ts",
+    "playwright.config.ts",
+    ".github/workflows/ci.yml",
+    "package.json",
+    "README.md"
+  ];
+  const evidenceFiles = evidencePaths
+    .map((repoPath) => summarizeEvidenceFile(root, repoPath))
+    .filter((file) => file.exists);
+  const texts = evidenceFiles.map((file) => readFileSync(join(root, file.path), "utf8"));
+  const combined = texts.join("\n");
+  const scriptPresent = evidenceFiles.some((file) =>
+    file.path === "scripts/browser_smoke.py" || file.path.startsWith("browser-smoke/")
+  );
+  const command = detectBrowserSmokeCommand(combined);
+  const ciIntegrated = /\.github\/workflows\/ci\.yml/.test(
+    evidenceFiles.map((file) => file.path).join("\n")
+  ) && /browser[-\s:]?smoke|browser_smoke|playwright test/i.test(combined);
+  const assertedDisabledCapabilities = detectDisabledCapabilityAssertions(combined);
+  return {
+    ready: scriptPresent && Boolean(command) && ciIntegrated,
+    scriptPresent,
+    command,
+    ciIntegrated,
+    evidenceFiles,
+    assertedDisabledCapabilities
+  };
+}
+
+function detectBrowserSmokeCommand(text) {
+  if (/["']browser:smoke["']\s*:\s*["']playwright test["']/.test(text)) {
+    return "npm run browser:smoke";
+  }
+  if (/python(?:3)?\s+scripts\/browser_smoke\.py/.test(text)) {
+    return "python scripts/browser_smoke.py";
+  }
+  if (/scripts\/browser_smoke\.py/.test(text)) {
+    return "python scripts/browser_smoke.py";
+  }
+  return null;
+}
+
+function detectDisabledCapabilityAssertions(text) {
+  const capabilities = [
+    ["liveSettlementEnabled", /liveSettlementEnabled["']?\]?\s*(?:is|===?)\s*False|liveSettlementEnabled["']?: false/i],
+    ["executionEnabled", /executionEnabled["']?\]?\s*(?:is|===?)\s*False|executionEnabled["']?: false/i],
+    ["telegramSendsEnabled", /telegramSendsEnabled["']?\]?\s*(?:is|===?)\s*False|telegramSendsEnabled["']?: false/i],
+    ["moneyMovementEnabled", /moneyMovementEnabled["']?\]?\s*(?:is|===?)\s*False|moneyMovementEnabled["']?: false/i],
+    ["transactionSigningEnabled", /transactionSigningEnabled["']?\]?\s*(?:is|===?)\s*False|transactionSigningEnabled["']?: false/i],
+    ["workbenchCanTriggerLiveActions", /workbenchCanTriggerLiveActions["']?\]?\s*(?:is|===?)\s*False|workbenchCanTriggerLiveActions["']?: false/i],
+    ["liveProviderCredentialsAllowed", /liveProviderCredentialsAllowed=false|liveProviderCredentialsAllowed["']?: false/i],
+    ["liveSettlementAllowed", /liveSettlementAllowed=false|liveSettlementAllowed["']?: false/i]
+  ];
+  return capabilities
+    .filter(([, pattern]) => pattern.test(text))
+    .map(([name]) => name)
+    .sort();
+}
+
 function readCachedFile(root, repoPath, cache) {
   if (!cache.has(repoPath)) {
     cache.set(repoPath, readFileSync(join(root, repoPath), "utf8"));
@@ -383,6 +457,7 @@ function summarize(repos) {
     expectedContractCount: repos.reduce((sum, repo) => sum + repo.counts.expectedContracts, 0),
     detectedContractCount: repos.reduce((sum, repo) => sum + repo.counts.detectedContracts, 0),
     dirtyRepoCount: repos.filter((repo) => repo.git.dirty).length,
+    browserSmokeReadyCount: repos.filter((repo) => repo.browserSmoke.ready).length,
     byReadiness: countBy(repos, "readiness"),
     byRisk: countBy(repos, "risk")
   };
@@ -421,7 +496,10 @@ function renderMarkdown(value) {
     const routes = repo.contracts
       .map((item) => `${item.route} (${item.detected ? "ok" : "missing"})`)
       .join("; ");
-    return `| ${escapeCell(repo.name)} | ${escapeCell(repo.readiness)} | ${escapeCell(repo.risk)} | ${escapeCell(repo.git.branch ?? "missing")} | ${repo.git.dirty ? "yes" : "no"} | ${repo.counts.detectedContracts}/${repo.counts.expectedContracts} | ${escapeCell(routes)} | ${escapeCell(missing)} | ${escapeCell(repo.recommendation)} |`;
+    const browserSmoke = repo.browserSmoke.ready
+      ? `ready (${repo.browserSmoke.command})`
+      : "missing";
+    return `| ${escapeCell(repo.name)} | ${escapeCell(repo.readiness)} | ${escapeCell(repo.risk)} | ${escapeCell(repo.git.branch ?? "missing")} | ${repo.git.dirty ? "yes" : "no"} | ${repo.counts.detectedContracts}/${repo.counts.expectedContracts} | ${escapeCell(browserSmoke)} | ${escapeCell(routes)} | ${escapeCell(missing)} | ${escapeCell(repo.recommendation)} |`;
   });
   const order = value.refactorOrder.map((item, index) => {
     return `${index + 1}. ${item.name}: ${item.next}`;
@@ -441,14 +519,15 @@ Safety posture: read-only metadata scan. No source lines, secret values, runtime
 - Partial-contract repos: ${value.summary.partialContractCount}
 - Expected contracts: ${value.summary.expectedContractCount}
 - Detected contracts: ${value.summary.detectedContractCount}
+- Browser-smoke ready repos: ${value.summary.browserSmokeReadyCount}
 - Dirty repos: ${value.summary.dirtyRepoCount}
 - Readiness counts: ${formatCounts(value.summary.byReadiness)}
 - Risk counts: ${formatCounts(value.summary.byRisk)}
 
 ## Contract Status
 
-| Repo | Readiness | Risk | Branch | Dirty | Detected | Contract routes | Missing | Recommendation |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Repo | Readiness | Risk | Branch | Dirty | Detected | Browser smoke | Contract routes | Missing | Recommendation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 ${rows.join("\n")}
 
 ## Refactor Order
