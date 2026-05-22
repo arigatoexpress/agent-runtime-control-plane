@@ -4,8 +4,9 @@ import { mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
+import { repoRoot } from "./support/repo-root.mjs";
 
-const cwd = "/Users/aribs/Code/agent-runtime-control-plane";
+const cwd = repoRoot;
 
 test("contract inventory reports integration contracts without source snippets", () => {
   execFileSync("node", ["--check", "scripts/contract-inventory.mjs"], {

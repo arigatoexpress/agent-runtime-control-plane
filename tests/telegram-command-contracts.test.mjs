@@ -6,8 +6,9 @@ import { dirname, join } from "node:path";
 import test from "node:test";
 
 import { buildTelegramPmBotStatusContract } from "../scripts/telegram-command-contracts.mjs";
+import { repoRoot } from "./support/repo-root.mjs";
 
-const cwd = "/Users/aribs/Code/agent-runtime-control-plane";
+const cwd = repoRoot;
 
 test("telegram command contract script parses", () => {
   execFileSync("node", ["--check", "scripts/telegram-command-contracts.mjs"], {
