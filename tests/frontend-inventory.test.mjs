@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import test from "node:test";
+import { repoRoot } from "./support/repo-root.mjs";
 
-const cwd = "/Users/aribs/Code/agent-runtime-control-plane";
+const cwd = repoRoot;
 
 test("frontend inventory script parses and reports AOE without source snippets", () => {
   execFileSync("node", ["--check", "scripts/frontend-inventory.mjs"], {
