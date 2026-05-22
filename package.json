@@ -28,11 +28,12 @@
     "hackathon-demos:write": "node scripts/hackathon-demo-inventory.mjs --write data/hackathon-demo-inventory.md --write-json data/hackathon-demo-inventory.json",
     "quarantine-plan": "node scripts/quarantine-plan.mjs --write data/quarantine-plan.md",
     "publication:audit": "node scripts/publication-audit.mjs",
-    "check:scripts": "node --check scripts/inventory.mjs && node --check scripts/git-roots.mjs && node --check scripts/runtime-surfaces.mjs && node --check scripts/launchagents.mjs && node --check scripts/launchagent-readiness.mjs && node --check scripts/telegram-surfaces.mjs && node --check scripts/telegram-command-contracts.mjs && node --check scripts/frontend-inventory.mjs && node --check scripts/contract-inventory.mjs && node --check scripts/hackathon-demo-inventory.mjs && node --check scripts/quarantine-plan.mjs && node --check scripts/publication-audit.mjs",
+    "publication:plan": "node scripts/publication-plan.mjs",
+    "check:scripts": "node --check scripts/inventory.mjs && node --check scripts/git-roots.mjs && node --check scripts/runtime-surfaces.mjs && node --check scripts/launchagents.mjs && node --check scripts/launchagent-readiness.mjs && node --check scripts/telegram-surfaces.mjs && node --check scripts/telegram-command-contracts.mjs && node --check scripts/frontend-inventory.mjs && node --check scripts/contract-inventory.mjs && node --check scripts/hackathon-demo-inventory.mjs && node --check scripts/quarantine-plan.mjs && node --check scripts/publication-audit.mjs && node --check scripts/publication-plan.mjs",
     "test": "node --test tests/*.test.mjs",
-    "test:portable": "node --test tests/classifier.test.mjs tests/publication-audit.test.mjs tests/telegram-command-contracts.test.mjs",
-    "verify:ci": "npm run test:portable && npm run check:scripts && npm run publication:audit",
-    "verify": "npm test && npm run check:scripts && npm run publication:audit && npm run inventory && npm run repo-map && npm run surfaces && npm run launchagents && npm run telegram && npm run telegram:contracts && npm run frontends && npm run contracts && npm run hackathon-demos"
+    "test:portable": "node --test tests/classifier.test.mjs tests/publication-audit.test.mjs tests/publication-plan.test.mjs tests/telegram-command-contracts.test.mjs",
+    "verify:ci": "npm run test:portable && npm run check:scripts && npm run publication:audit && npm run publication:plan",
+    "verify": "npm test && npm run check:scripts && npm run publication:audit && npm run publication:plan && npm run inventory && npm run repo-map && npm run surfaces && npm run launchagents && npm run telegram && npm run telegram:contracts && npm run frontends && npm run contracts && npm run hackathon-demos"
   },
   "engines": {
     "node": ">=22"
