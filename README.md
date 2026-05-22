@@ -19,6 +19,7 @@ npm run inventory
 npm run inventory:write
 npm run contracts
 npm run contracts:write
+npm run publication:plan
 npm run verify
 ```
 
@@ -31,6 +32,11 @@ values, message bodies, payment headers, or runtime payloads.
 readiness endpoints across the x402, regional-intel, and hackathon satellite
 repos so this control plane can consume contracts instead of absorbing product
 code.
+
+`npm run publication:plan` emits a non-mutating publication readiness plan. It
+combines the tracked-source publication audit with ignored generated-data output
+metadata, keeps generated inventories excluded from any public export, and
+requires explicit approval before repository visibility changes.
 
 ## Current Strategy
 
