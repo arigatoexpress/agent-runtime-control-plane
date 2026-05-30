@@ -1,3 +1,21 @@
+node_modules/
+dist/
+build/
+.DS_Store
+.env
+.env.*
+!.env.example
+coverage/
+*.tsbuildinfo
+logs/
+*.log
+.cache/
+.vscode/
+.idea/
+.nyc_output/
+.pytest_cache/
+
+# Generated data reports (keep directory and README)
 data/*
 !data/
 !data/README.md
